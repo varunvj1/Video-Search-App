@@ -2,12 +2,16 @@ import React from "react";
 
 class SearchBar extends React.Component {
   state = { term: "" };
+
   onInputChange = event => {
     this.setState({ term: event.target.value });
   };
+
   onFormSubmit = event => {
     event.preventDefault();
-    console.log(this.state.term);
+
+    //pass a callback function from child(search bar) to parent (App.js)
+    this.props.onFormSubmit(this.state.term);
   };
   render() {
     return (
@@ -22,9 +26,6 @@ class SearchBar extends React.Component {
               onChange={this.onInputChange}
             />
           </div>
-          {/* <button className="ui button" type="submit">
-            Submit
-          </button> */}
         </form>
       </div>
     );
