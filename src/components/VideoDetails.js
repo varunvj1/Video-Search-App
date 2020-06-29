@@ -5,8 +5,8 @@ const VideoDetails = ({ video }) => {
     // return <div> Loading...</div>;
     return (
       <div>
-        <div class="ui active inverted dimmer">
-          <div class="ui loader"></div>
+        <div className="ui active inverted dimmer">
+          <div className="ui loader"></div>
         </div>
       </div>
     );
@@ -18,7 +18,7 @@ const VideoDetails = ({ video }) => {
         <iframe title="Video player" src={videoSrc} />
       </div>
       <div className="ui segment">
-        <h4 className="header"> {video.snippet.title} </h4>
+        <h3 className="header"> {video.snippet.title} </h3>
         <p> {video.snippet.description} </p>
       </div>
     </div>
